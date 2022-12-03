@@ -3,7 +3,7 @@ import bisect
 
 class Solution:
     @staticmethod
-    def search(self, nums: list[int], target: int) -> int:
+    def search(nums: list[int], target: int) -> int:
         index = bisect.bisect_left(nums, target)
         return index if index < len(nums) and nums[index] == target else -1
 
@@ -18,9 +18,12 @@ class Solution:
         return -1
 
 
-lst: list[int] = [3, 9, 5, 7, 8, 2, 11]
+lst: list[int] = [1, 3, 5, 6]
+target = 2
 ln = len(lst)
 sol = Solution()
 lst.sort()
-print(sol.search(nums=lst, target=7))  # 8.099999831756577e-06
+print(sol.search(nums=lst, target=2))  # 8.099999831756577e-06
 print(sol.search_2(arr=lst, target=7, low=0, high=ln - 1))  # 1.8999999156221747e-06
+
+print(bisect.bisect_left(lst, target))  # binary insert
