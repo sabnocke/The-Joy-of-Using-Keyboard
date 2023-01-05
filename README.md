@@ -1,2 +1,2 @@
 # What's purpose of this thing?
- Indeed
+ This is where the fun begins.
