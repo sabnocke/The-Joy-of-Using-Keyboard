@@ -6,16 +6,17 @@ namespace Node
     {
         static void Main(string[] args)
         {
-            Node node = new Node();
-            node.Inception(10);
-            node.Inception(2);
-            node.Inception(3);
-            node.Inception(4);
+            Node node = new Node(10);          
+            node.Peak();
+            node.Push(5);
+            node.Peak();
+            node.Push(12);
+            node.Push(8);
             node.Peak();
             node.Pop();
             node.Peak();
+            node.integCck();
             node.Print();
-
         }
     }
 }
