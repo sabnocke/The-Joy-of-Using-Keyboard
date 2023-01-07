@@ -1,0 +1,15 @@
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\bin\Debug\net7.0\Node.exe
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\bin\Debug\net7.0\Node.deps.json
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\bin\Debug\net7.0\Node.runtimeconfig.json
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\bin\Debug\net7.0\Node.dll
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\bin\Debug\net7.0\Node.pdb
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\obj\Debug\net7.0\Node.csproj.AssemblyReference.cache
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\obj\Debug\net7.0\Node.GeneratedMSBuildEditorConfig.editorconfig
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\obj\Debug\net7.0\Node.AssemblyInfoInputs.cache
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\obj\Debug\net7.0\Node.AssemblyInfo.cs
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\obj\Debug\net7.0\Node.csproj.CoreCompileInputs.cache
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\obj\Debug\net7.0\Node.dll
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\obj\Debug\net7.0\refint\Node.dll
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\obj\Debug\net7.0\Node.pdb
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\obj\Debug\net7.0\Node.genruntimeconfig.cache
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C# more like E\Node\obj\Debug\net7.0\ref\Node.dll

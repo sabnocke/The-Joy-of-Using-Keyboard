@@ -66,8 +66,7 @@ namespace Node
 
         public bool Print()
         {
-            string h = (chain.Count > 0) ? string.Join(", ", chain) : "null";
-            Console.WriteLine($"{h}");
+            Console.WriteLine($"{((chain.Count > 0) ? string.Join(", ", chain) : "null")}");
             return true;
         }
 
