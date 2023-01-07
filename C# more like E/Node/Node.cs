@@ -1,62 +1,66 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Node
-#pragma warning disable CS8618 // Pole, které nemůže být null, musí při ukončování konstruktoru obsahovat hodnotu, která není null. Zvažte možnost deklarovat ho jako pole s možnou hodnotou null.
-#pragma warning disable CS8625 // Literál null nejde převést na odkazový typ, který nemůže mít hodnotu null.
 {
     internal class Node
     {
+        /* 
+         * .push = vklada hodnotu
+         * .peak = vraci nejvyssi hodnotu
+         * .pop = odstrani nejvyssi hodnotu
+         * .print = vytiskne celou serii
+         */
 
         public int value;
-        public Node ancestor;
+        public Node ancestor;   // drzi predka, "starsi clanek"
+        public Node descendant; // drzi potomka, "mladsi clanek"
         public List<int> chain = new List<int>(); // bude drzet vsechny hodnoty a treba se bude hodit
         public Node frontier;
         // drzi posledni vygenerovany clanek
 
-
-        public Node()
-
+        public Node(int data = 0) // prvni v rade
         {
-            value= 0;
-
+            value = data;
             ancestor = null;
-
+            descendant = null;
+            // generic prirazeni
+            frontier = this;
+            // nastavi frontier na sebe
+            chain.Add(data);
+            // prida svoji hodnotu do retezu
         }
-        // .push = vklada hodnotu
-        // .peak = vraci nejvyssi hodnotu
-        // .pop = odstrani nejvyssi hodnotu
-        // .print = vytiskne celou serii
-        public bool Inception(int new_data)
-        // vytvori prvni clanek; navaze ancestor na frontier (null == null) a na frontier novy clanek
-        // *frontier tak drzi prvni clanek
-        // v pripade posunu pote dochazi k vytvoreni noveho clanku
-        // zatim nejvetsi uspech
+
+        public Node(int new_data, Node older, Node newer) //2. az x clanek
         {
-            Node new_node = new Node();
-            new_node.value = new_data;
-            if (ancestor == null)
-            {
-                new_node.ancestor = frontier;
-                frontier = new_node;
-            } 
+            value = new_data;
+            ancestor = older;
+            descendant = newer;
+        }
+        
+        public bool Push(int new_data)
+        {
+            Node new_node = new Node(new_data, frontier, null);
+            frontier.descendant = new_node;
+            frontier = new_node;
             chain.Add(new_node.value);
             return true;
         }
-        
-
         public bool Peak()
         {
-            Console.WriteLine(frontier.value);
+            Console.WriteLine($"peak value: {frontier.value}");
             return true;
         }
 
         public bool Pop()
         {
             frontier = frontier.ancestor;
+            frontier.descendant = null;
+            chain.RemoveAt(chain.Count - 1);
             return true;
         }
 
@@ -67,7 +71,26 @@ namespace Node
             return true;
         }
 
+        public bool integCck()
+        {
+            Node temp = frontier;
+            int run = 0;
+            int run2 = 0;
+            while(temp.ancestor != null)
+            {
+                temp = temp.ancestor;
+                run++;
+            }
+            if (temp.descendant != null)
+            {
+                while (temp.descendant != null)
+                {
+                    temp = temp.descendant;
+                    run2++;
+                }
+            }
+            Console.WriteLine($"amount of runs down: {run}\namount of runs up: {run2}");
+            return true;
+        }
     }
-#pragma warning restore CS8618 // Pole, které nemůže být null, musí při ukončování konstruktoru obsahovat hodnotu, která není null. Zvažte možnost deklarovat ho jako pole s možnou hodnotou null.
-#pragma warning restore CS8625 // Literál null nejde převést na odkazový typ, který nemůže mít hodnotu null.
 }
