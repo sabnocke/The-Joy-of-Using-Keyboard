@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Node
+﻿namespace Node
 {
+#pragma warning disable CS8618 // Pole, které nemůže být null, musí při ukončování konstruktoru obsahovat hodnotu, která není null. Zvažte možnost deklarovat ho jako pole s možnou hodnotou null.
+#pragma warning disable CS8625 // Literál null nejde převést na odkazový typ, který nemůže mít hodnotu null.
     internal class Node
     {
         /* 
@@ -14,6 +9,7 @@ namespace Node
          * .peak = vraci nejvyssi hodnotu
          * .pop = odstrani nejvyssi hodnotu
          * .print = vytiskne celou serii
+         * !bacha na "pragma warning disable", mohlo by to delat bordel!
          */
 
         public int value;
@@ -22,8 +18,11 @@ namespace Node
         public List<int> chain = new List<int>(); // bude drzet vsechny hodnoty a treba se bude hodit
         public Node frontier;
         // drzi posledni vygenerovany clanek
+        public int key = 1;
 
-        public Node(int data = 0) // prvni v rade
+
+        public Node(int data = 0) // prvni v rade, pak uz se nepouziva
+
         {
             value = data;
             ancestor = null;
@@ -31,25 +30,24 @@ namespace Node
             // generic prirazeni
             frontier = this;
             // nastavi frontier na sebe
-            chain.Add(data);
-            // prida svoji hodnotu do retezu
         }
 
-        public Node(int new_data, Node older, Node newer) //2. az x clanek
+        public Node(int new_data, Node older, int key_value) //2. az x clanek
         {
             value = new_data;
             ancestor = older;
-            descendant = newer;
+            key = key_value;
+
         }
-        
+
         public bool Push(int new_data)
         {
-            Node new_node = new Node(new_data, frontier, null);
+            Node new_node = new Node(new_data, frontier, key++);
             frontier.descendant = new_node;
             frontier = new_node;
-            chain.Add(new_node.value);
             return true;
         }
+
         public bool Peak()
         {
             Console.WriteLine($"peak value: {frontier.value}");
@@ -60,13 +58,20 @@ namespace Node
         {
             frontier = frontier.ancestor;
             frontier.descendant = null;
-            chain.RemoveAt(chain.Count - 1);
             return true;
         }
 
         public bool Print()
         {
-            Console.WriteLine($"{((chain.Count > 0) ? string.Join(", ", chain) : "null")}");
+            Node temp = frontier;
+            if (temp.ancestor == null) { Console.WriteLine("empty"); }
+            Console.Write("Print: ");
+            while (temp.ancestor != null)
+            {
+                Console.Write(temp.value + " ");
+                temp = temp.ancestor;
+            }
+            Console.WriteLine();
             return true;
         }
 
@@ -75,7 +80,7 @@ namespace Node
             Node temp = frontier;
             int run = 0;
             int run2 = 0;
-            while(temp.ancestor != null)
+            while (temp.ancestor != null)
             {
                 temp = temp.ancestor;
                 run++;
@@ -88,8 +93,64 @@ namespace Node
                     run2++;
                 }
             }
-            Console.WriteLine($"amount of runs down: {run}\namount of runs up: {run2}");
+            Console.WriteLine((run == run2) ? true : false);
+            return true;
+        }
+
+        public bool swap(List<int> lst, int one, int two)
+        // krasny swap pro list
+        {
+            int temp = lst[one];
+            lst[one] = lst[two];
+            lst[two] = temp;
+            return true;
+        }
+
+        public bool ToList()
+        // prevede obsah retezu do listu (technicky by sel i array)
+        {
+            Node temp = frontier;
+            for (int i = 0; i < key; i++)
+            {
+                chain.Add(temp.value);
+                temp = temp.ancestor;
+            }
+            return true;
+        }
+
+        public bool bubble_sort()
+        // generic bubble sort
+        {
+            ToList();
+            for (int i = 0; i < chain.Count; i++)
+            {
+                for (int a = 0; a < chain.Count - 1; a++)
+                {
+                    if (chain[a] > chain[a + 1])
+                    {
+                        swap(chain, a, a + 1);
+                    }
+                }
+            }
+            Returnal();
+            return true;
+        }
+        public bool Returnal()
+        {
+            Cleanse();
+            int[] arr = chain.ToArray(); Array.Reverse(arr);
+            foreach (int i in arr) { Push(i); }
+            return true;
+        }
+        public bool Cleanse()
+        // mohl by mazat cely retez (?)
+        {
+
+            frontier.ancestor = null;
+
             return true;
         }
     }
+#pragma warning restore CS8625 // Literál null nejde převést na odkazový typ, který nemůže mít hodnotu null.
+#pragma warning restore CS8618 // Pole, které nemůže být null, musí při ukončování konstruktoru obsahovat hodnotu, která není null. Zvažte možnost deklarovat ho jako pole s možnou hodnotou null.
 }
