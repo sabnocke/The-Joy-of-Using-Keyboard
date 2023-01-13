@@ -1,2 +1,6 @@
-# What's purpose of this thing?
- This is where the fun begins.
+# This is where the fun begins.
+ 
+"C# More Like E" contains:
+ * test
+ * stack
+ * Node
