@@ -6,10 +6,8 @@
         {
             Sort sort= new();
             int[] arr = { 8, 4, 1, 56, 3, -44, 23, -6, 28, 0 };
-            sort.Print(arr);
-            sort.ShakerSort(arr);
-            sort.Print(arr);
-
+            Data data= new Data();
+            sort.Call(arr, "bubblesort");
         }
     }
 }
