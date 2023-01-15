@@ -14,11 +14,16 @@ namespace fine_selection_of_sorts
 {
     internal class Data
     {
+        public TimeSpan timer;
+        
         public Action<T> CreateDelegate<T>(string typeName, string methodName)
         {
+            Stopwatch stopwatch = Stopwatch.StartNew();
             Assembly assembly= Assembly.GetExecutingAssembly();
             Type type= assembly.GetType(typeName ?? throw new ArgumentNullException(nameof(typeName)))!;
             MethodInfo methodInfo = type.GetMethod(methodName ?? throw new ArgumentNullException(nameof(methodName)))!;
+            stopwatch.Stop();
+            timer = stopwatch.Elapsed;
             return (Action<T>)Delegate.CreateDelegate(typeof(Action<T>), methodInfo);
         }
     }
@@ -27,15 +32,17 @@ namespace fine_selection_of_sorts
     {
         public Sort() { }
 
-        public void Call(int[] arr, string st)
+
+        public void Call(double[] arr, string st)
         {
             if (st == "") { throw new Exception("Wrong input on string!"); }
-            Action<int[]> myDelegate = CreateDelegate<int[]>(typeName: "fine_selection_of_sorts.Sort", methodName: $"{st}");
+            Action<double[]> myDelegate = CreateDelegate<double[]>(typeName: "fine_selection_of_sorts.Sort", methodName: $"{st}");
             TimeSpan time = measure(myDelegate, arr);
-            Cout($"Runtime: {arr.Length} ints over {time.TotalMilliseconds}ms");
+            Cout($"Runtime: {arr.Length} ints over {time.TotalMilliseconds}ms{Environment.NewLine}Creation of delegate: {timer.TotalMilliseconds} ms");
+            
         }
 
-        public TimeSpan measure(Action<int[]> func, int[] arr)
+        public TimeSpan measure(Action<double[]> func, double[] arr)
         {
             Stopwatch stopwatch = new();
             stopwatch.Start();
@@ -50,7 +57,7 @@ namespace fine_selection_of_sorts
             Cout($"Switch Count: {switchCount}");
         }
 
-        public static void Cout<T>(T rnd, bool line = true)
+        public static void Cout(object? rnd, bool line = true)
         {
             switch (line)
             {
@@ -60,11 +67,11 @@ namespace fine_selection_of_sorts
             
         }
         
-        public static bool swap(int[] arr, int x, int y)
+        public static bool swap(double[] arr, int x, int y)
         {
-            int temp = arr[x]; 
-            arr[x] = arr[y];
-            arr[y] = temp;
+            int temp = (int)arr[(int)x]; 
+            arr[(int)x] = arr[(int)y];
+            arr[(int)y] = temp;
             return true;
         }
 
@@ -72,9 +79,9 @@ namespace fine_selection_of_sorts
         {
             for(int i = 0; i < arr.Length - 1; i++)
             {
-                if (arr[i] > arr[i + 1]) { Cout<string>("False"); return false; }
+                if (arr[i] > arr[i + 1]) { Cout("False"); return false; }
             }
-            Cout<string>("True");
+            Cout("True");
             return true;
         }
 
@@ -82,14 +89,14 @@ namespace fine_selection_of_sorts
         {
             foreach(int n in arr)
             {
-                Cout<string>($"{n} ", false);
+                Cout($"{n} ", false);
             }
-            Cout<string>("");
+            Cout("");
         }
 
-        public static void bubblesort(int[] arr)
+        public static void bubblesort(double[] arr)
         {
-            int turnCount = 0; int swithCount = 0;
+            int turnCount = 0; int switchCount = 0;
             for (int i = 0; i < arr.Length - 1; i++)
             {
                 for (int a = 0; a < arr.Length - 1; a++)
@@ -97,16 +104,17 @@ namespace fine_selection_of_sorts
                     if (arr[a] > arr[a + 1])
                     {
                         swap(arr, a, a + 1);
-                        swithCount++;
+                        switchCount++;
                     }
                     turnCount++;
                 }
             }
-            Stats(turnCount, swithCount);
+            Stats(turnCount, switchCount);
         }
 
-        public static void shakersort(int[] arr)
+        public static void shakersort(double[] arr)
         {
+            int turnCount = 0; int switchCount = 0;
             bool swapped = true;
             int start = 0;
             int end = arr.Length - 1;
@@ -119,7 +127,9 @@ namespace fine_selection_of_sorts
                     {
                         swap(arr, i, i + 1);
                         swapped = true;
+                        switchCount++;
                     }
+                    turnCount++;
                 }
                 if( swapped == false) { break; }
                 end--;
@@ -130,17 +140,20 @@ namespace fine_selection_of_sorts
                     {
                         swap(arr, i, i - 1);
                         swapped = true;
+                        switchCount++;
                     }
+                    turnCount++;
                 }
                 if(swapped == false) { break; }
                 start++;
-
             }
+            Stats(turnCount, switchCount);
         }
 
-        public static void InsertSort(int[] arr)
+        public static void insersort(double[] arr)
         {
-            int BinarySearch(int[] arr, int target, int low, int high)
+            int turnCount = 0; int switchCount = 0;
+            int BinarySearch(double[] arr, int target, int low, int high)
             {
                 while(low <= high)
                 {
@@ -160,26 +173,29 @@ namespace fine_selection_of_sorts
                 }
             return low;
             }
-            bool insSort() {
+            void insSort() {
                 int lng = arr.Length;
-                for(int i = 0; i < lng; i++)
+                
+                for (int i = 0; i < lng; i++)
                 {
                     int j = i - 1;
-                    int selected = arr[i];
+                    int selected = (int)arr[(int)i];
                     int loc = BinarySearch(arr, selected, 0, j);
                     while( j >= loc)
                     {
                         arr[j + 1] = arr[j];
                         j--;
+                        switchCount++;
                     }
                     arr[j + 1] = selected;
+                    turnCount++;
                 }
-                return true;
             }
             insSort();
-        } // ma slaba stranka
+            Stats(turnCount, switchCount);
+        } // ma slaba stranka ; a jeste k tomu vsemu to ani nefunguje
 
-        public static void SelectSort(int[] arr)
+        public static void SelectSort(double[] arr)
         {
             bool slcSort()
             {
@@ -193,7 +209,7 @@ namespace fine_selection_of_sorts
                 }
                 return true;
             }
-            int locOfSmallest(int[] arr, int loc, int lng)
+            int locOfSmallest(double[] arr, int loc, int lng)
             {
                 int i = loc;
                 int j = i;
@@ -210,7 +226,7 @@ namespace fine_selection_of_sorts
             slcSort();
         } // ma slaba stranka #2
 
-        public static void MergeSort(int[] arr)
+        public static void MergeSort(double[] arr)
         {
             void mrgSort(int start, int end)
             {
@@ -226,8 +242,8 @@ namespace fine_selection_of_sorts
             {
                 int dex1 = mid - start + 1;
                 int dex2 = end - mid + 1;
-                int[] L = new int[dex1];
-                int[] R = new int[dex2];
+                double[] L = new double[dex1];
+                double[] R = new double[dex2];
                 int flg, flg2;
                 for(flg = 0; flg < dex1; ++flg)
                 {
@@ -269,9 +285,10 @@ namespace fine_selection_of_sorts
             mrgSort(start, end);
         } // dear god
 
-        public static void QuickSort(int[] arr)
+        public static void quicksort(double[] arr)
         {
-            int partition(int[] arr, int start, int end)
+            int turnCount = 0; int switchCount = 0;
+            int partition(double[] arr, int start, int end)
             {
                 int mid = (start + end) / 2;
                 int pivot = mid;
@@ -279,27 +296,32 @@ namespace fine_selection_of_sorts
                 {
                     while (arr[start] < arr[mid]) { start++; }
                     while (arr[end] > arr[mid]) { end--; }
-                    while (start < end)
+                    while (start <= end)
                     {
-                        int temp = arr[start];
-                        arr[start] = arr[end];
-                        arr[end] = temp;
+                        swap(arr, start, end);
+                        switchCount++;
+                        start++;
+                        end--;
                     }
+                    turnCount++;
                 }
                 return mid;
             }
-            void qSort(int[] arr, int start, int end)
+            void qSort(double[] arr, int start, int end)
             {
                 int midPoint = partition(arr, start, end);
                 if (start < midPoint) { qSort(arr, start, midPoint); }
                 if (end > midPoint) { qSort(arr, midPoint + 1, end); }
             }
-            int start = 0; int end = arr.Length;
+            int start = 0; int end = arr.Length - 1;
             qSort(arr,start,end);
+            Stats(turnCount, switchCount);
         }
 
-        public static void CombSort(int[] arr)
+        public static void combsort(double[] arr)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            int turnCount = 0; int switchCount = 0;
             int getnextgap(int gap)
             {
                 gap = (gap * 10) / 13;
@@ -320,22 +342,30 @@ namespace fine_selection_of_sorts
                         if (arr[i] > arr[i + gap])
                         {
                             swap(arr, i, i + gap);
+                            switchCount++;
                             swapped = true;
                         }
+                        turnCount++;
                     }
                 }
             }
+            //stopwatch.Start();
             cSort();
+            //stopwatch.Stop();
+            //TimeSpan time = stopwatch.Elapsed;
+            //Cout(time.TotalMilliseconds);
+            Stats(turnCount, switchCount);
         }
 
-        public static void PigeonHoleSort(int[] arr)
+        public static void pigeonhole(double[] arr)
         {
-            int[] filler()
+            int turnCount = 0; int switchCount = 0;
+            double max = arr.Max();
+            double min = arr.Min();
+            double range = max - min + 1;
+            double[] filler()
             {
-                int max = arr.Max();
-                int min = arr.Min();
-                int range = max - min + 1;
-                int[] holes = new int[range];
+                double[] holes = new double[(int)range];
                 for(int i = 0; i < range - 1; i++)
                 {
                     holes = holes.Append(0).ToArray();
@@ -344,13 +374,10 @@ namespace fine_selection_of_sorts
             }
             void PHS()
             {
-                int max = arr.Max();
-                int min = arr.Min();
-                int range = max - min + 1;
-                int[] holes = filler();
-                foreach(int n in arr)
+                double[] holes = filler();
+                foreach(double n in arr)
                 {
-                    holes[n - min]++;
+                    holes[(int)(n - min)]++;
                 }
                 int i = 0;
                 for(int count = 0; count < range; count++) {
@@ -359,10 +386,13 @@ namespace fine_selection_of_sorts
                         holes[count]--;
                         arr[i] = count + min;
                         i++;
+                        switchCount++;
                     }
+                    turnCount++;
                 }
             }
             PHS();
+            Stats(turnCount, switchCount);
         } // haha, holub
         
     }
