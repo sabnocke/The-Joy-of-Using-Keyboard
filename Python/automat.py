@@ -12,6 +12,8 @@ class Automaton:
     def accepts_word(self, word: str) -> bool:
         self.current_state = self.start_state
         for char in word:
+            if char not in self.alphabet:
+                return False
             if char not in self.transition_function[self.current_state]:
                 self.current_state = self.start_state
             else:
@@ -30,8 +32,9 @@ automaton.transition_function = {
 }
 automaton.start_state = "q1"
 automaton.end_states = {"q5"}
-automaton.alphabet = {"a", "b"}
+automaton.alphabet = {"a"}
 print(automaton.accepts_word("a"))  # False
 print(automaton.accepts_word("ahoj"))  # True
 print(automaton.accepts_word("abba"))  # True
+print(automaton.current_state)
 print(automaton.accepts_word("abbaaa"))  # False

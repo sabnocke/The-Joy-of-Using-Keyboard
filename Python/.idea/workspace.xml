@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2970ca01-3137-40e5-9b80-2157d326e0f1" name="Changes" comment="test">
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/ProjectEvaluation/fine selection of sorts.metadata.v5.2" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/ProjectEvaluation/fine selection of sorts.metadata.v5.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/ProjectEvaluation/fine selection of sorts.projects.v5.2" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/ProjectEvaluation/fine selection of sorts.projects.v5.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/FileContentIndex/786b743b-a44f-4fd9-9827-1e6e19a8c41c.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/FileContentIndex/af35d227-acd5-420d-a02b-c1cf526511e9.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/v17/.futdcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/Sort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/Sort.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/bin/Debug/net7.0/fine selection of sorts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/bin/Debug/net7.0/fine selection of sorts.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/bin/Debug/net7.0/fine selection of sorts.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/bin/Debug/net7.0/fine selection of sorts.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/obj/Debug/net7.0/fine selection of sorts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/obj/Debug/net7.0/fine selection of sorts.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/obj/Debug/net7.0/fine selection of sorts.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/obj/Debug/net7.0/fine selection of sorts.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/obj/Debug/net7.0/ref/fine selection of sorts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/obj/Debug/net7.0/ref/fine selection of sorts.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/obj/Debug/net7.0/refint/fine selection of sorts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/obj/Debug/net7.0/refint/fine selection of sorts.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/sort.py" afterDir="false" />
-    </list>
+    <list default="true" id="2970ca01-3137-40e5-9b80-2157d326e0f1" name="Changes" comment="test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,6 +58,14 @@
       <option name="presentableId" value="Default" />
       <updated>1671439830563</updated>
     </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1674069109413</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674069109413</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,16 +98,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
 </project>
