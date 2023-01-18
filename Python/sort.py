@@ -23,7 +23,7 @@ def test_ascent(arr) -> None:
 
 
 # bubble sort
-def bubble_sort(array: list[int]) -> list:
+def bubble_sort(array: list) -> list:
     for _ in range(len(array) - 1):
         for i in range(len(array) - 1):
             if array[i] > array[i + 1]:
@@ -138,7 +138,7 @@ def merge_sort(arr: list[int]) -> list:
 
 
 # quick sort
-def quick_sort(data: list[int]) -> list:
+def quick_sort(data: list) -> list:
     start = 0
     end = len(data) - 1
 
@@ -190,7 +190,7 @@ def comb_sort(arr: list[int]) -> list:
 
 
 # pigeonhole sort
-def pigeonhole_sort(arr: list[int]):
+def pigeonhole_sort(arr: list):
     min_ = min(arr)
     max_ = max(arr)
     range_ = max_ - min_ + 1
@@ -230,4 +230,4 @@ def counting_sort(arr):
 
 lst = [8, 4, 1, 56, 3, -44, 23, -6, 28, 0]
 lst2 = [10, 2, 5, 89, 1496, 256, 7, 89]
-print(counting_sort(lst2))
+

@@ -14,16 +14,11 @@ namespace fine_selection_of_sorts
 {
     internal class Data
     {
-        public TimeSpan timer;
-        
         public Action<T> CreateDelegate<T>(string typeName, string methodName)
         {
-            Stopwatch stopwatch = Stopwatch.StartNew();
             Assembly assembly= Assembly.GetExecutingAssembly();
-            Type type= assembly.GetType(typeName ?? throw new ArgumentNullException(nameof(typeName)))!;
+            Type type = assembly.GetType(typeName ?? throw new ArgumentNullException(nameof(typeName)))!;
             MethodInfo methodInfo = type.GetMethod(methodName ?? throw new ArgumentNullException(nameof(methodName)))!;
-            stopwatch.Stop();
-            timer = stopwatch.Elapsed;
             return (Action<T>)Delegate.CreateDelegate(typeof(Action<T>), methodInfo);
         }
     }
@@ -35,10 +30,13 @@ namespace fine_selection_of_sorts
 
         public void Call(double[] arr, string st)
         {
+            Stopwatch stopwatch = Stopwatch.StartNew();
             if (st == "") { throw new Exception("Wrong input on string!"); }
             Action<double[]> myDelegate = CreateDelegate<double[]>(typeName: "fine_selection_of_sorts.Sort", methodName: $"{st}");
             TimeSpan time = measure(myDelegate, arr);
-            Cout($"Runtime: {arr.Length} ints over {time.TotalMilliseconds}ms{Environment.NewLine}Creation of delegate: {timer.TotalMilliseconds} ms");
+            stopwatch.Stop();
+            TimeSpan timer = stopwatch.Elapsed;
+            Cout($"Runtime: {arr.Length} ints over {time.TotalMilliseconds}ms{Environment.NewLine}Creation of delegate: {timer.TotalMilliseconds - time.TotalMilliseconds} ms");
             
         }
 
