@@ -32,9 +32,8 @@ automaton.transition_function = {
 }
 automaton.start_state = "q1"
 automaton.end_states = {"q5"}
-automaton.alphabet = {"a"}
+automaton.alphabet = {"a", "b"}
 print(automaton.accepts_word("a"))  # False
 print(automaton.accepts_word("ahoj"))  # True
 print(automaton.accepts_word("abba"))  # True
-print(automaton.current_state)
 print(automaton.accepts_word("abbaaa"))  # False
