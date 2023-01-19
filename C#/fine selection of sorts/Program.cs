@@ -2,14 +2,14 @@
 {
     internal class Program
     {
-        public static void printArray(int[] arr)
+        public static void printArray(double[] arr)
         {
             foreach(int n in arr)
             {
                 Console.Write($"{n} ");
             }
         }
-        public static double[] filler(double[] arr, double length = 10, int min = 1, int max = 100)
+        public static int[] filler(int[] arr, double length = 10, int min = 1, int max = 100)
         {
             Random rnd = new Random();
             for (int a = 0; a < length; a++)
@@ -22,12 +22,15 @@
         static void Main(string[] args)
         {
             Sort sort = new();
+            SortV2 sortin = new();
             int[] arr = { 8, 4, 1, 56, 3, -44, 23, -6, 28, 0 };
-            double i = 1E+6; int max = 10000; int min = -10000;
-            double[] firstArr = new double[(int)i];
+            int i = 10; int max = 10000; int min = -10000;
+            int[] firstArr = new int[i];
+            int[] secondArr = new int[i];
             filler(firstArr, length: i, max: max, min: min);
-            sort.Call(firstArr, "shakersort");
-            
+            filler(secondArr, length: i, max: max, min: min);
+            sort.Call(firstArr, "mergesort");
+            sortin.Run(secondArr);
 
         }
 
