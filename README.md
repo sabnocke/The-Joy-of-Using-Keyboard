@@ -6,5 +6,5 @@ C#
 * fine selection of sorts
 
 Python
-* sort - opravit!!
+* sort 
 * automaton
