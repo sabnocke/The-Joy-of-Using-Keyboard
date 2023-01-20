@@ -9,3 +9,4 @@ Python
 * sort 
 * automaton
 * roman converter
+* kmp algo
