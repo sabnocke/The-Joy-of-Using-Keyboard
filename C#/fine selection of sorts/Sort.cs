@@ -22,29 +22,17 @@ namespace fine_selection_of_sorts
         /// <param name="typeName">nacita classu v ramci namespace (musi byt presne)</param>
         /// <param name="methodName">nacita metodu z dane classy, pokud soubezne prijima stejne argumenty pro jake byl delegat vytvoren</param>
         /// <returns>vraci delegat pro danou metodu</returns>
-        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentNullException">null handling</exception>
         public Action<T> CreateDelegate<T>(string typeName, string methodName)
-        // co presne tahle funkce dela mi neni uplne jasne, ale chapu cca. vetsinu
         {
             Assembly assembly= Assembly.GetExecutingAssembly();
-            // vraci assembly ktery obsahuje kod, ktery je prave spousten ; proc to? to nevim.
+            // vraci assembly ekvivalent prave spousteneho kodu
             Type type = assembly.GetType(typeName ?? throw new ArgumentNullException(nameof(typeName)))!;
-            // jak tohle funguje je pravdepodobne nejvetsi zahada cele funkce;
-            // ale pokud jsem to spravne pochopil; melo by to vratit typ objektu, ktery je predany jako string 
-            // ty dva vykricniky a vykricnik na konci jsou tam kvuli null handlingu; Type type zkratka nesmi byt null
+            // nacita typ z hodnoty stringu
             MethodInfo methodInfo = type.GetMethod(methodName ?? throw new ArgumentNullException(nameof(methodName)))!;
-            // toto je uz trochu lehci na vysvetleni, v podstate to nacita funkci predanou jako string (pokud tam nejaka existuje viz. <param name="methodName">) z classy v type
-            // opet je potreba null handling
+            // nacita funkci, predanou jako string, z classy v type
             return (Action<T>)Delegate.CreateDelegate(typeof(Action<T>), methodInfo);
-            // finalni vystup cele funkce; vraci delegate typu T, ktery deleguje metodu jmenem methodInfo
-            
-            /* ted se nabizi otazka, vyplati se to?
-             * absolutne ne, cela funkce extremne spomaluje cely proces (sort, ktery by trval cca. 1ms, trva cca. 20ms);
-             * dalsi nevyhoda je extremni citlivost na obsah stringu, pokud funkce v ramci tridy neshoduje se stringem hodi to chybu;
-             * zmena typu (int -> double) je pain in ass, protoze se pak musi prepsat pul kodu;
-             * In conclusion: obsah tridy Data je kompletni waste of time a nemel by v zadnem pripade byt pouzit na cokoliv, AZ na ukol do seminare programovani, zde je to zajimavost-
-             * a ty fungovat nemusi;
-             */
+            // vraci delegate typu T, ktery deleguje metodu jmenem methodInfo
         }
     }
     
@@ -54,7 +42,7 @@ namespace fine_selection_of_sorts
 
 
         /// <summary>
-        /// jediny funkcni zpusob jak zavolat jakykoliv sort
+        /// Jediny funkcni zpusob jak zavolat jakykoliv sort, v ramci teto metody
         /// </summary>
         /// <param name="arr">pole k setrideni</param>
         /// <param name="st">Bere pouze specificke hodnoty/nazvy sortu</param>
@@ -219,7 +207,7 @@ namespace fine_selection_of_sorts
             }
             insSort();
             Stats(turnCount, switchCount);
-        } // ma slaba stranka
+        } 
 
         public static void selectsort(int[] arr)
         {
@@ -254,7 +242,7 @@ namespace fine_selection_of_sorts
             }
             slcSort();
             Stats(turnCount, switchCount);
-        } // ma slaba stranka #2
+        } 
 
         public static void mergesort(int[] arr)
         {
@@ -312,7 +300,7 @@ namespace fine_selection_of_sorts
             }
             sort(arr, 0, arr.Length - 1);
             Stats(turnCount, switchCount);
-        } // dear god
+        }
 
         public static void quicksort(int[] arr)
         {
@@ -349,13 +337,6 @@ namespace fine_selection_of_sorts
         }
 
         public static void pigeonhole(int[] arr)
-        /* pokud jsem to pochopil spravne,
-         * tohle je neco jako Counting Sort; to jest prirazovaci algoritmus; radi se zde podle klice, ktery se generuje cetnosti jednotlivych intu (asi by to fungovali i pro char);
-         * nasledne se hodnoty vraci zpet do puvodniho pole podle jejich indexu v klici (nejdriv nejmensi cisla, pak ty vetsi, atd. dokut je v poli misto nebo v klici neco zbyva);
-         * mereni turnCount a switchCount zde nema moc smysl, nebot dochazi pouze ke generaci klice a preskladani podle daneho klice, tudiz pocet switchu je roven poctu znaku v poli;
-         * A ted ke srovnani mezi ostatnimi sorty;
-         * pomaly pro nizsi cisla, zacina vyrovnavat u vyssiho poctu cisel (cca. kolem 1E + 6 - 8) a predhani pro vsechno vyssi, bohuzel jeho peak je az v oblasti double
-         */
         {
             int turnCount = 0; int switchCount = 0;
             int max = arr.Max();
@@ -387,7 +368,7 @@ namespace fine_selection_of_sorts
             }
             PHS();
             Stats(turnCount, switchCount);
-        } // haha, holub
+        } 
         
     }
 
@@ -689,6 +670,10 @@ namespace fine_selection_of_sorts
             Cout($"Runtime: {time.TotalMilliseconds}ms");
         }
 
+        /// <summary>
+        /// Spusti vsechny sorty naraz
+        /// </summary>
+        /// <param name="arr"></param>
         public void Run(int[] arr)
         {
             int[] tstArrBu = new int[arr.Length]; int[] tstArrSh = new int[arr.Length]; int[] tstArrIn = new int[arr.Length]; int[] tstArrSe = new int[arr.Length];
