@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2970ca01-3137-40e5-9b80-2157d326e0f1" name="Changes" comment="test">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/ProjectEvaluation/fine selection of sorts.metadata.v5.2" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/ProjectEvaluation/fine selection of sorts.metadata.v5.2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/ProjectEvaluation/fine selection of sorts.projects.v5.2" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/ProjectEvaluation/fine selection of sorts.projects.v5.2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/v17/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/FileContentIndex/15843190-b4aa-46dc-b78e-0df96675e24e.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automat.py" beforeDir="false" afterPath="$PROJECT_DIR$/automat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/sort.py" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

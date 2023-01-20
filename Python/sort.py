@@ -10,16 +10,13 @@ def swap(array: list[int], first: int, second: int) -> None:
     array[first], array[second] = array[second], array[first]
 
 
-def test_ascent(arr) -> None:
+def test_ascent(arr) -> bool:
     """
     
     :param arr: list to test
     :return: True if passes, else False; Actually prints tho
     """
-    for i in range(len(arr) - 1):
-        if arr[i] > arr[i + 1]:
-            print("False")
-    print("True")
+    return all(arr[i] <= arr[i + 1] for i in range(len(arr) - 1))
 
 
 # bubble sort
@@ -144,6 +141,7 @@ def quick_sort(data: list) -> list:
 
     def partition(arr, low, high):
         mid = (low + high) // 2
+<<<<<<< Updated upstream
         i_left = low
         i_right = high
         pivot = arr[mid]
@@ -164,6 +162,27 @@ def quick_sort(data: list) -> list:
             qSort(arr, low, mid_point - 1)
         if mid_point < high:
             qSort(arr, mid_point, high)
+=======
+        pivot = mid
+        while low < high:
+            while arr[low] < arr[pivot]:
+                low += 1
+            while arr[high] > arr[pivot]:
+                high -= 1
+            while low <= high:
+                swap(arr, low, high)
+                low += 1
+                high -= 1
+        print(low)
+        return low
+
+    def qSort(arr: list[int], low: int, high: int):
+        mid_point = partition(arr, low, high)
+        if  low < high:
+            qSort(arr, low, mid_point - 1)
+            qSort(arr, mid_point, high)
+            print("high")
+>>>>>>> Stashed changes
         return arr
 
     return qSort(data, start, end)
@@ -211,5 +230,10 @@ def pigeonhole_sort(arr: list):
 
 lst = [8, 4, 1, 56, 3, -44, 23, -6, 28, 0]
 lst2 = [10, 2, 5, 89, 1496, 256, 7, 89]
+quick_sort(lst)
+print(lst)
+bubble_sort(lst)
+print(lst)
+
 
 
