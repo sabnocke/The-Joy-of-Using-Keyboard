@@ -141,7 +141,6 @@ def quick_sort(data: list) -> list:
 
     def partition(arr, low, high):
         mid = (low + high) // 2
-<<<<<<< Updated upstream
         i_left = low
         i_right = high
         pivot = arr[mid]
@@ -162,7 +161,6 @@ def quick_sort(data: list) -> list:
             qSort(arr, low, mid_point - 1)
         if mid_point < high:
             qSort(arr, mid_point, high)
-=======
         pivot = mid
         while low < high:
             while arr[low] < arr[pivot]:
@@ -173,7 +171,6 @@ def quick_sort(data: list) -> list:
                 swap(arr, low, high)
                 low += 1
                 high -= 1
-        print(low)
         return low
 
     def qSort(arr: list[int], low: int, high: int):
@@ -182,7 +179,6 @@ def quick_sort(data: list) -> list:
             qSort(arr, low, mid_point - 1)
             qSort(arr, mid_point, high)
             print("high")
->>>>>>> Stashed changes
         return arr
 
     return qSort(data, start, end)
