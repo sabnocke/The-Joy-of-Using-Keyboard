@@ -124,7 +124,7 @@ def merge_sort(arr: list[int]) -> list:
         result = []
         i = j = 0
         while i < len(left) and j < len(right):
-            if left[i] < right[j]:
+            if left[i] <= right[j]:
                 result.append(left[i])
                 i += 1
             else:
@@ -144,24 +144,26 @@ def quick_sort(data: list) -> list:
 
     def partition(arr, low, high):
         mid = (low + high) // 2
-        pivot = mid
-        while low < high:
-            while arr[low] < arr[pivot]:
-                low += 1
-            while arr[high] > arr[pivot]:
-                high -= 1
-            while low < high:
-                swap(arr, low, high)
-                low += 1
-                high -= 1
-        return low
+        i_left = low
+        i_right = high
+        pivot = arr[mid]
+        while i_left < i_right:
+            while arr[i_left] < pivot:
+                i_left += 1
+            while arr[i_right] > pivot:
+                i_right -= 1
+            if i_left <= i_right:
+                swap(arr, i_left, i_right)
+                i_left += 1
+                i_right -= 1
+        return i_left
 
     def qSort(arr: list[int], low: int, high: int):
         mid_point = partition(arr, low, high)
-        if low < mid_point:
+        if low < mid_point - 1:
             qSort(arr, low, mid_point - 1)
-        if high > mid_point:
-            qSort(arr, mid_point + 1, high)
+        if mid_point < high:
+            qSort(arr, mid_point, high)
         return arr
 
     return qSort(data, start, end)
@@ -207,27 +209,7 @@ def pigeonhole_sort(arr: list):
     return arr
 
 
-# counting sort
-def counting_sort(arr):
-    # find max value
-    max_val = max(arr)
-    # create list for counting
-    count_arr = [0] * (max_val + 1)
-    # for each value adds 1 to the list
-    for i in arr:
-        count_arr[i] += 1
-    # adds prior value to current one
-    for i in range(1, len(count_arr)):
-        count_arr[i] += count_arr[i - 1]
-    # creates output
-    output = [0] * len(arr)
-    # for every position in arr finds value in count and adds it to output
-    for i in range(len(arr) - 1, -1, -1):
-        output[count_arr[arr[i]] - 1] = arr[i]
-        count_arr[arr[i]] -= 1
-    return output
-
-
 lst = [8, 4, 1, 56, 3, -44, 23, -6, 28, 0]
 lst2 = [10, 2, 5, 89, 1496, 256, 7, 89]
+
 
