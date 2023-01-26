@@ -36,4 +36,3 @@ def compute_prefix_function(pattern):
 text = "kokokosovy"
 kmp_search(text, "kokos")
 compute_prefix_function("abrakadabra")
-# klic je 1:A, 2:C, 3:C
