@@ -1,0 +1,15 @@
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\bin\Debug\net7.0\assembly-testground.exe
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\bin\Debug\net7.0\assembly-testground.deps.json
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\bin\Debug\net7.0\assembly-testground.runtimeconfig.json
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\bin\Debug\net7.0\assembly-testground.dll
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\bin\Debug\net7.0\assembly-testground.pdb
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\obj\Debug\net7.0\assembly-testground.csproj.AssemblyReference.cache
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\obj\Debug\net7.0\assembly-testground.GeneratedMSBuildEditorConfig.editorconfig
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\obj\Debug\net7.0\assembly-testground.AssemblyInfoInputs.cache
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\obj\Debug\net7.0\assembly-testground.AssemblyInfo.cs
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\obj\Debug\net7.0\assembly-testground.csproj.CoreCompileInputs.cache
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\obj\Debug\net7.0\assembly-testground.dll
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\obj\Debug\net7.0\refint\assembly-testground.dll
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\obj\Debug\net7.0\assembly-testground.pdb
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\obj\Debug\net7.0\assembly-testground.genruntimeconfig.cache
+E:\Omniscient Folder\commitment\The-Joy-of-Using-Keyboard\C#\assembly-testground\obj\Debug\net7.0\ref\assembly-testground.dll
