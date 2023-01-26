@@ -23,6 +23,7 @@
         {
             Sort sort = new();
             SortV2 sortin = new();
+            Object @object = new(typeof(Sort));
             int[] arr = { 8, 4, 1, 56, 3, -44, 23, -6, 28, 0 };
             int i = 10; int max = 10000; int min = -10000;
             int[] firstArr = new int[i];
@@ -30,7 +31,7 @@
             filler(firstArr, length: i, max: max, min: min);
             filler(secondArr, length: i, max: max, min: min);
             sort.Call(firstArr, "mergesort");
-            sortin.Run(secondArr);
+            @object.Test();
 
         }
 
