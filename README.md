@@ -11,3 +11,4 @@ Python
 * automaton
 * roman converter
 * kmp algo
+* calculator
