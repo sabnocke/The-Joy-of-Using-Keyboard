@@ -4,18 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2970ca01-3137-40e5-9b80-2157d326e0f1" name="Changes" comment="test">
-<<<<<<< Updated upstream
+    <list default="true" id="eaef3904-c21f-47f7-9e54-89c0b2ed3d42" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data structures/Structures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/Image Processing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/Python.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/ProjectEvaluation/fine selection of sorts.metadata.v5.2" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/ProjectEvaluation/fine selection of sorts.metadata.v5.2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/ProjectEvaluation/fine selection of sorts.projects.v5.2" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/ProjectEvaluation/fine selection of sorts.projects.v5.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/FileContentIndex/47a5d067-9059-45cf-b770-29e3583f19a8.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/FileContentIndex/6686a8b9-388f-4380-8db4-a4cbe9864b42.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/FileContentIndex/ad104343-c602-4cf7-9848-01114e00ba7b.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/FileContentIndex/fd440f3a-5255-4a46-ae41-f765cf6a58de.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/v17/.futdcache.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/../C#/fine selection of sorts/.vs/fine selection of sorts/FileContentIndex/15843190-b4aa-46dc-b78e-0df96675e24e.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automat.py" beforeDir="false" afterPath="$PROJECT_DIR$/automat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/sort.py" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,29 +53,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Omniscient Folder/commitment/The-Joy-of-Using-Keyboard/Python&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/Omniscient Folder/commitment/py.venv",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;Python&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "sqlite"
+    ],
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Python"
     ]
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2970ca01-3137-40e5-9b80-2157d326e0f1" name="Changes" comment="" />
+      <changelist id="eaef3904-c21f-47f7-9e54-89c0b2ed3d42" name="Changes" comment="" />
       <created>1671439830563</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671439830563</updated>
+      <workItem from="1675968654620" duration="4943000" />
+      <workItem from="1676027838100" duration="861000" />
+      <workItem from="1676047101939" duration="8898000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1674069109413</created>
@@ -93,6 +114,9 @@
     </task>
     <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -126,5 +150,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="test" />
     <option name="LAST_COMMIT_MESSAGE" value="test" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Python$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1676053595452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
   </component>
 </project>
