@@ -11,6 +11,7 @@ class Node:
     :type _prev: Node or None
 
     """
+
     def __init__(self, data=None, _next=None, _prev=None):
         self.data: object = data
         self.next: Node | None = _next
@@ -37,6 +38,7 @@ class Stack:
 
     :raise StackUnderflow: if stack is empty
     """
+
     def __init__(self):
         self.current = Node()
         self.count: int = 0
@@ -56,7 +58,7 @@ class Stack:
         self.count += 1
 
     # noinspection PyUnresolvedReferences
-    def pop(self):
+    def pop(self) -> Node:
         """"""
         temp = self.current
         if self.count == 1:
@@ -67,11 +69,15 @@ class Stack:
             raise StackUnderflow("Attempted to call pop on empty stack")
         return temp
 
+    def empty(self) -> bool:
+        return self.count == 0
+
 
 class Queue:
     """
     A class to create a queue.
     """
+
     def __init__(self):
         self.tail = None
         self.head = None
@@ -115,3 +121,6 @@ class Queue:
         elif self.count < 1:
             raise StackUnderflow("Attempted to call dequeue on empty queue")
         self.count -= 1
+
+
+
