@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6LjzP4znI4FcwC/1SMTG5mnuAbG0L1Dy1Ht963nE3zU/tJptmXcGt0w7r//MkBbgqLAzHTYFQ9ZVbE9dnutrcw==",
+  "dgSpecHash": "R1zHPNyr6vcauSMHHUYC06SNas/4WjmN1k9w19sW74EmkZBc8i+izaiI6X88GaCEg06JsrBh5stTnc0CLQoCoQ==",
   "success": true,
-  "projectFilePath": "E:\\Omniscient Folder\\commitment\\The-Joy-of-Using-Keyboard\\C# more like E\\test\\test.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "e:\\Omniscient Folder\\commitment\\The-Joy-of-Using-Keyboard\\C#\\test\\test.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ReWyn\\.nuget\\packages\\newrelic.agent\\10.7.0\\newrelic.agent.10.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

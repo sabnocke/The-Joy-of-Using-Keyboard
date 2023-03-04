@@ -1,3 +1,6 @@
+from numpy import array, nditer
+from typing import List
+
 class Node:
     """Generic Node class
 
@@ -49,6 +52,14 @@ class Stack:
     def __len__(self):
         return self.count
 
+    def peek(self):
+        return d if ((d := self.current.data) is not None) else ""
+
+    def extend(self, list_data):
+        lst = array(list_data)
+        for element in nditer(lst):
+            self.push(element)
+
     def push(self, data):
         new_node = Node(data=data, _next=None, _prev=None)
         if self.current is not None:
@@ -56,6 +67,7 @@ class Stack:
             self.current.next = new_node
         self.current = new_node
         self.count += 1
+
 
     # noinspection PyUnresolvedReferences
     def pop(self) -> Node:
@@ -121,6 +133,3 @@ class Queue:
         elif self.count < 1:
             raise StackUnderflow("Attempted to call dequeue on empty queue")
         self.count -= 1
-
-
-

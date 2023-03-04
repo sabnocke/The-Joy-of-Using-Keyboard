@@ -220,6 +220,4 @@ class SortAlgo:
         return self.lst
 
 
-test: list[int] = [8, 4, 1, 56, 3, -44, 23, -6, 28, 0]
-sort = SortAlgo(test)
-print(sort)
+
