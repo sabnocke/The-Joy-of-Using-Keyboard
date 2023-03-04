@@ -13,3 +13,5 @@ Python
 * kmp algo
 * calculator
 * Prototype
+* avalanche_dog_boot_size
+* ml.ipynb
