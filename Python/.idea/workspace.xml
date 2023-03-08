@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eaef3904-c21f-47f7-9e54-89c0b2ed3d42" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gramatics.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -20,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
@@ -150,6 +150,10 @@
       <workItem from="1677934912105" duration="2300000" />
       <workItem from="1678047555111" duration="2000" />
       <workItem from="1678113960343" duration="1371000" />
+      <workItem from="1678197174803" duration="653000" />
+      <workItem from="1678197852891" duration="13241000" />
+      <workItem from="1678212086820" duration="6978000" />
+      <workItem from="1678262886307" duration="16846000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1674069109413</created>
