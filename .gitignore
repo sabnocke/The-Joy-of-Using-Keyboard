@@ -6,3 +6,7 @@ Python/SendStuff/raspberry_sql.py
 Python/data.csv
 Python/webpage.py
 Python/gramatics.ipynb
+Python/build/lib.win-amd64-cpython-311/tt.cp311-win_amd64.pyd
+Python/build/temp.win-amd64-cpython-311/Release/tt.cp311-win_amd64.exp
+Python/build/temp.win-amd64-cpython-311/Release/tt.obj
+Python/build/temp.win-amd64-cpython-311/Release/tt.cp311-win_amd64.lib
