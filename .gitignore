@@ -10,3 +10,18 @@ Python/build/lib.win-amd64-cpython-311/tt.cp311-win_amd64.pyd
 Python/build/temp.win-amd64-cpython-311/Release/tt.cp311-win_amd64.exp
 Python/build/temp.win-amd64-cpython-311/Release/tt.obj
 Python/build/temp.win-amd64-cpython-311/Release/tt.cp311-win_amd64.lib
+Project.txt
+database heap.txt
+project
+Python/neoflix
+Python/.idea
+Python/codiga.yml
+Julia/tt.jl
+Python/.idea/workspace.xml
+Python/Prototype/__pycache__/__init__.cpython-311.pyc
+Python/Prototype/__pycache__/Sort.cpython-311.pyc
+Python/Prototype/__pycache__/Structures.cpython-311.pyc
+Python/.idea/workspace.xml
+.idea
+rs.rs
+Nim/file.exe
