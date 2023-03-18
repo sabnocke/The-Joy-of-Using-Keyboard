@@ -25,3 +25,5 @@ Python/.idea/workspace.xml
 .idea
 rs.rs
 Nim/file.exe
+Python/data
+node_modules
