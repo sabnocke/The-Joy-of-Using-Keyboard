@@ -29,3 +29,5 @@ Python/data
 node_modules
 Python/gui/examples/simple_example.py
 Python/gui/examples/complex_example.py
+.vscode
+*.txt

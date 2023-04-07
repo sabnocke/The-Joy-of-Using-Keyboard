@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Tento soubor obsahuje direktivy modulu runtime, specifikace typů, ke kterým vaše aplikace přistupuje
+    prostřednictvím reflexe a dalších vzorů dynamického kódu. Direktivy modulu runtime se používají k řízení
+    optimalizátoru .NET Native a zajišťují, že nedojde k odstranění kódu, ke kterému přistupuje vaše knihovna.
+    Pokud vaše knihovna žádnou reflexi neprovádí, nemusíte tento soubor v zásadě vůbec upravovat.
+    Pokud ale vaše knihovna provádí reflexi nad typy, zvlášť těmi, které se knihovně předávají nebo jsou odvozené od jejích typů,
+    měli byste direktivy modulu runtime doplnit.
+
+    Nejběžněji se reflexe v knihovnách používá ke zjišťování informací o typech předávaných
+    knihovně. Direktivy modulu runtime můžou požadavky na typy předávané knihovně vyjádřit
+    třemi způsoby.
+
+    1.  Parameter, GenericParameter, TypeParameter, TypeEnumerableParameter
+        Tyto direktivy můžete použít k provádění reflexe nad typy předávanými jako parametr.
+
+    2.  SubTypes
+        Direktiva SubTypes slouží k provedení reflexe nad typy odvozenými z jiného typu.
+
+    3.  AttributeImplies
+        Direktivou AttributeImplies můžete označit, že vaše knihovna potřebuje provést reflexi
+        nad typy nebo metodami s doplněným atributem.
+
+    Další informace o psaní direktiv modulu runtime pro knihovny najdete na adrese
+    https://go.microsoft.com/fwlink/?LinkID=391919.
+-->
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+  <Library Name="Prototype">
+
+  	<!-- sem přidejte direktivy pro knihovnu -->
+
+  </Library>
+</Directives>
