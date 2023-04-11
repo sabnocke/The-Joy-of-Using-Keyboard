@@ -16,7 +16,7 @@ namespace testGround
             return true;
         }
 
-        public static string Verify(string password)
+        public static string Verify(this string password)
         {
             bool verified = true;
             Dictionary<string, bool> boolsName = new Dictionary<string, bool> {

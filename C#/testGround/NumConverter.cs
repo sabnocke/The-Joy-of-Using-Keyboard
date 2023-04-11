@@ -4,7 +4,7 @@ namespace testGround
 {
     internal static class NumConverter
     {
-        public static string Convert(int num, int convertFrom, int convertTo)
+        public static string Convert(this int num, int convertFrom, int convertTo)
         {
             
             if (convertFrom == convertTo) return num.ToString();
