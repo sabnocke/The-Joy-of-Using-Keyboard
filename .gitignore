@@ -4,7 +4,6 @@ Python/project/Image Processing.py
 Python/project/Python.png
 Python/SendStuff/raspberry_sql.py
 Python/data.csv
-Python/webpage.py
 Python/gramatics.ipynb
 Python/build/lib.win-amd64-cpython-311/tt.cp311-win_amd64.pyd
 Python/build/temp.win-amd64-cpython-311/Release/tt.cp311-win_amd64.exp
@@ -21,7 +20,6 @@ Python/.idea/workspace.xml
 Python/Prototype/__pycache__/__init__.cpython-311.pyc
 Python/Prototype/__pycache__/Sort.cpython-311.pyc
 Python/Prototype/__pycache__/Structures.cpython-311.pyc
-Python/.idea/workspace.xml
 .idea
 rs.rs
 Nim/file.exe

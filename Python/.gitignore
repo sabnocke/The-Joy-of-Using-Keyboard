@@ -161,3 +161,4 @@ cython_debug/
 *.keras
 *.pkl
 *.png
+azureCustomSpeech.py
