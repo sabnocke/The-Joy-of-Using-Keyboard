@@ -595,3 +595,7 @@ azureCustomSpeech.py
 *.exe
 *.cache
 *.editorconfig
+*.xml
+*.iml
+*.xml
+*.vocab
