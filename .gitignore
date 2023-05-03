@@ -592,3 +592,6 @@ cython_debug/
 *.pkl
 *.png
 azureCustomSpeech.py
+*.exe
+*.cache
+*.editorconfig
