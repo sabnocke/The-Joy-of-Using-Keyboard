@@ -1,5 +1,5 @@
 from numpy import array, nditer
-from typing import List
+
 
 class Node:
     """Generic Node class
@@ -67,7 +67,6 @@ class Stack:
             self.current.next = new_node
         self.current = new_node
         self.count += 1
-
 
     # noinspection PyUnresolvedReferences
     def pop(self) -> Node:

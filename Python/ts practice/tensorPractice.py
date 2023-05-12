@@ -41,8 +41,9 @@ def string_processing(dataframe: DataFrame, inputs: Dict) -> List:
     the model.
 
     The default settings for the tf.keras.layers.CategoryEncoding layer create a one-hot vector for each input. A
-    tf.keras.layers.Embedding would also work. Check out the Working with preprocessing layers guide and the Classify
-    structured data using Keras preprocessing layers tutorial for more on this topic.
+    tf.keras.layers.Embedding would also work.
+    TODO Check out the Working with preprocessing layers guide and
+    TODO the Classify structured data using Keras preprocessing layers tutorial for more on this topic.
     :param dataframe: dataframe from which numerical inputs should be processed
     :param inputs:
     :return:
@@ -64,7 +65,7 @@ def df_to_dataset(dataframe, shuffle=True, batch_size=32):
     dataframe.copy()
     df = {key: value[:, tf.newaxis] for key, value in dataframe.items()}
     ds = tf.data.Dataset.from_tensor_slices((dict(df)))
-    if shuffle:
+    if shuffle:  # Randomizes order of data
         ds = ds.shuffle(buffer_size=len(dataframe))
     ds = ds.batch(batch_size)
     ds = ds.prefetch(batch_size)

@@ -1,20 +1,14 @@
-﻿
-namespace testGround;
+﻿namespace testGround;
 
 public static class NumSum
 {
     public static double Sum(this int input)
     {
         double sum = 0;
-        foreach (char @char in input.ToString())
-        {
+        foreach (var @char in input.ToString())
             if (char.IsDigit(@char))
-            {
                 sum += char.GetNumericValue(@char);
-            }
-        }
 
         return sum;
     }
-    
 }

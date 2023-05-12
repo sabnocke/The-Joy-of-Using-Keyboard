@@ -1,41 +1,37 @@
 ﻿using Arche;
 using System.Text.RegularExpressions;
-namespace testGround
+
+namespace testGround;
+
+internal static class Validation
 {
-    internal static class Validation
+    private static bool CheckUnique(string password)
     {
-        private static bool CheckUnique(string password)
-        {
-            for (int i = 1; i < password.Length; i++)
-            {
-                if (password[i] == password[i - 1])
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
+        for (var i = 1; i < password.Length; i++)
+            if (password[i] == password[i - 1])
+                return false;
+        return true;
+    }
 
-        public static string Verify(this string password)
+    public static string Verify(this string password)
+    {
+        var verified = true;
+        Dictionary<string, bool> boolsName = new()
         {
-            bool verified = true;
-            Dictionary<string, bool> boolsName = new Dictionary<string, bool> {
-                { @"Heslo neobsahuje požadnovaný počet znaků.", password.Length > 8 },
-                { @"Heslo neobsahuje číslice." , Regex.IsMatch(password, @"\d", RegexOptions.IgnoreCase) },
-                { @"Heslo neobsahuje velké písmeno." , Regex.IsMatch(password, @"[A-Z]") },
-                { @"Heslo obsahuje dva stejné znaky za sebou." , CheckUnique(password) },
-            };
+            { @"Heslo neobsahuje požadnovaný počet znaků.", password.Length > 8 },
+            { @"Heslo neobsahuje číslice.", Regex.IsMatch(password, @"\d", RegexOptions.IgnoreCase) },
+            { @"Heslo neobsahuje velké písmeno.", Regex.IsMatch(password, @"[A-Z]") },
+            { @"Heslo obsahuje dva stejné znaky za sebou.", CheckUnique(password) }
+        };
 
-            Standard.Cout($"Heslo: {password}");
-            foreach ((string key, bool value) in boolsName)
+        Standard.Cout($"Heslo: {password}");
+        foreach ((var key, var value) in boolsName)
+            if (!value)
             {
-                if (!value)
-                {
-                    Standard.Cout($"*\t{key}");
-                    verified = false;
-                }
+                Standard.Cout($"*\t{key}");
+                verified = false;
             }
-            return verified ? "*\tHeslo splňuje všechna kritéria." : "";
-        }
+
+        return verified ? "*\tHeslo splňuje všechna kritéria." : "";
     }
 }
