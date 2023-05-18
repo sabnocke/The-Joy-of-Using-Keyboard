@@ -79,7 +79,7 @@ class Calculator(tkt.Tk):
         except SyntaxError:
             self.answer.insert(tkt.INSERT, "")
 
-    def button_click(self, text):
+    def button_click(self, text: str) -> None:
         """actual setting of what each button does"""
         if text == "C":
             self.answer.delete(1.0, tkt.END)
