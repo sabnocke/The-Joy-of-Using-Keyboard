@@ -1,5 +1,6 @@
 from typing import List
 from rnd.ops import compare, unique
+import re
 
 
 def create_mix(one: List[int] | set[int], two: List[int] | set[int]) -> List[int]:
@@ -11,7 +12,9 @@ def create_mix(one: List[int] | set[int], two: List[int] | set[int]) -> List[int
     return [(x * y) for x in base for y in not_base]
 
 
-def function(nums: List[int] = [], equation: str = ""):
+def function(nums=None):
+    if nums is None:
+        nums = []
     upper = nums[len(nums) - 1]
     lower = nums[0]
     upper_divisor = set(
@@ -23,9 +26,14 @@ def function(nums: List[int] = [], equation: str = ""):
     )
     output = create_mix(upper_divisor, lower_divisor)
     assert unique(output), "Something has gone wrong."
+
+    return process(output, nums)
+
+
+def process(insert: List[int], nums):
     value: int | None = None
     answers = {}
-    for item in output:
+    for item in insert:
         placeholder = 0
         mem = []
         for x in nums:
@@ -38,7 +46,10 @@ def function(nums: List[int] = [], equation: str = ""):
     return answers
 
 
+actEq = "3x^3+2x^2+5x-7"
 ar1 = [2, 7, -15]
 ar2 = [1, 1, 2, 2]
-print(function(ar1))
-print(function(ar2))
+# print(function(ar1))
+# print(function(ar2))
+
+print(re.findall(r"(?:\wx){1,} (\+ | -)\w", actEq))
