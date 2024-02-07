@@ -604,3 +604,5 @@ azureCustomSpeech.py
 *.xml
 *.iml
 *.gz
+
+Python/.metals/
