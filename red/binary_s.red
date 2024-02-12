@@ -1,5 +1,5 @@
 Red [
-    description: {"description: {"Binary Search" exercise solution for exercism platform}"}
+    description: {"Binary Search" exercise solution for exercism platform}
     author: "Me"
 ]
 
