@@ -39,6 +39,11 @@ class ImageProcessor:
 
     @staticmethod
     def imageTransform(color: RGB) -> RGB:
+        """
+        This is a dot product to convert a color vector to gray color
+        :param color: Collection of three values that correspond to RGB colors
+        :return: Collection of three values that correspond to gray (they are all equal)
+        """
         gray = color.red * 0.299 + color.green * 0.587 + color.blue * 0.114
         return RGB(gray, gray, gray)
 
@@ -83,15 +88,14 @@ class ImageProcessor:
         extension: str = ".png",
         path: pathlib.Path = pathlib.Path.cwd(),
     ) -> bool:
-        new_path = os.path.join(path, name + extension)
+        new_path = os.path.join(path, str(name) + extension)
         return cv2.imwrite(new_path, self.converted)
 
 
 def main() -> None:
     img: Matrix = cv2.imread("../image (3).png")
     imp = ImageProcessor(img)
-    imp.transform_seq(False)
-    imp.transform()
+    imp.transform_seq(True)
 
 
 if __name__ == "__main__":
