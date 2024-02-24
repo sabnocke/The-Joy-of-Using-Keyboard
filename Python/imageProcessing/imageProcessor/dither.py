@@ -76,14 +76,15 @@ def dithering_parallel(image):
 
 
 def main() -> None:
-    image = cv2.imread('../image (3).png')
-    # img = dithering(image)
-    img = dithering_parallel(image)
+    image = cv2.imread('./10.png')
+    then: float = time.time()
+    img = dithering(image)
+    # img = dithering_parallel(image)
+    now: float = time.time()
     cv2.imshow('image', img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-    # print(len(image[0]), type(image[0]), image[0].shape)
-    # print(len(image[0][0]), type(image[0][0]))
+    print(f"Time taken: {now - then:.3f}s")
 
 
 if __name__ == "__main__":
