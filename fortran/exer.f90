@@ -22,7 +22,7 @@ module chars
       is_empty = len(s) == 0
     end function is_empty
 
-    logical function uppercase(s)
+    pure logical function uppercase(s)
       CHARACTER(*), INTENT(IN) :: s
       INTEGER :: i
 
