@@ -1,4 +1,5 @@
-﻿using Arche;
+﻿/*
+using Arche;
 
 namespace testGround;
 
@@ -46,3 +47,4 @@ internal static class NumConverter
         return result;
     }
 }
+*/

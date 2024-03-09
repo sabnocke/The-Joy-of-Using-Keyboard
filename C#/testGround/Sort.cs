@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using Arche;
+﻿using System.Numerics;
+
 
 namespace testGround;
 
@@ -16,7 +10,7 @@ public static class Std
         return (T)Convert.ChangeType(obj, typeof(T));
     }
 
-    public static int prc(this object obj)
+    public static int Prc(this object obj)
     {
         return obj.ChangeType<int>();
     }
@@ -34,20 +28,16 @@ internal class Sort<T>
     // insert sort
     // quick sort
     // merge sort
-    private T[]? control { get; set; }
+    private T[]? Control { get; set; }
 
 
-    private bool swap(ref T a, ref T b)
-    {
-        (a, b) = (b, a);
-        return true;
-    }
-
+    private static void Swap(ref T a, ref T b) => (a, b) = (b, a);
+    
     public bool IsSorted()
     {
-        if (control == null) throw new NullReferenceException($"IsSorted cannot be called on array of null");
-        for (var i = 0; i < control.Length - 1; i++)
-            if (control[i].CompareTo(control[i + 1]) > 0)
+        if (Control == null) throw new NullReferenceException($"IsSorted cannot be called on array of null");
+        for (var i = 0; i < Control.Length - 1; i++)
+            if (Control[i].CompareTo(Control[i + 1]) > 0)
                 return false;
         return true;
     }
@@ -58,12 +48,12 @@ internal class Sort<T>
         for (var i = 0; i < array.Length; i++)
         {
             for (var j = 0.ChangeType<T>(); j < end; j++)
-                if (array[j.prc()].CompareTo(array[(j + 1).prc()]) > 0)
-                    swap(ref array[j.prc()], ref array[(j + 1).prc()]);
+                if (array[j.Prc()].CompareTo(array[(j + 1).Prc()]) > 0)
+                    Swap(ref array[j.Prc()], ref array[(j + 1).Prc()]);
             end--;
         }
 
-        control = array;
+        Control = array;
         arr = array;
         return this;
     }
@@ -81,7 +71,7 @@ internal class Sort<T>
                 if (array[k].CompareTo(array[k + 1]) > 0)
                 {
                     swapped = true;
-                    swap(ref array[k], ref array[k + 1]);
+                    Swap(ref array[k], ref array[k + 1]);
                 }
 
             if (swapped) break;
@@ -91,14 +81,14 @@ internal class Sort<T>
                 if (array[i].CompareTo(array[i + 1]) < 0)
                 {
                     swapped = true;
-                    swap(ref array[i], ref array[i + 1]);
+                    Swap(ref array[i], ref array[i + 1]);
                 }
 
             if (swapped) break;
             start--;
         }
 
-        control = array;
+        Control = array;
         arr = array;
         return this;
     }
@@ -108,8 +98,8 @@ internal class Sort<T>
         for (var i = 1; i < array.Length; i++)
             if (array[i] < array[i - 1])
                 for (var j = i - 1; j > 0; j--)
-                    swap(ref array[j], ref array[j - 1]);
-        control = array;
+                    Swap(ref array[j], ref array[j - 1]);
+        Control = array;
         arr = array;
         return this;
     }
@@ -120,25 +110,37 @@ internal class Sort<T>
 
         for (var n = 0.ChangeType<T>(); n < length; n++)
         {
-            var min_idx = n;
+            var minIdx = n;
             for (var j = n + 1; j < length; j++)
-                if (array[j.ChangeType<int>()] < array[min_idx.ChangeType<int>()])
-                    min_idx = j;
-            swap(ref array[n.prc()], ref array[min_idx.prc()]);
+                if (array[j.ChangeType<int>()] < array[minIdx.ChangeType<int>()])
+                    minIdx = j;
+            Swap(ref array[n.Prc()], ref array[minIdx.Prc()]);
         }
 
         arr = array;
-        control = array;
+        Control = array;
         return this;
     }
 
     public Sort<T> quick_sort(T[] arr, out T[] values)
     {
         var length = arr.Length;
-        var min = 0;
+        const int min = 0;
         var max = length - 1;
 
-        int partition(int small, int large)
+        Quicksort();
+        values = arr;
+        Control = values;
+        return this;
+
+        void Quicksort()
+        {
+            var mid = Partition(min, max);
+            if (min < mid - 1) Partition(min, mid - 1);
+            if (mid < max) Partition(mid, max);
+        }
+
+        int Partition(int small, int large)
         {
             var mid = arr[(small + large) / 2];
             var left = small;
@@ -147,27 +149,13 @@ internal class Sort<T>
             {
                 while (arr[left] < mid) left++;
                 while (arr[right] > mid) right--;
-                if (left <= right)
-                {
-                    swap(ref arr[left], ref arr[right]);
-                    left++;
-                    right--;
-                }
+                if (left > right) continue;
+                Swap(ref arr[left], ref arr[right]);
+                left++;
+                right--;
             }
 
             return left;
         }
-
-        void qcksrt()
-        {
-            var mid = partition(min, max);
-            if (min < mid - 1) partition(min, mid - 1);
-            if (mid < max) partition(mid, max);
-        }
-
-        qcksrt();
-        values = arr;
-        control = values;
-        return this;
     }
 }

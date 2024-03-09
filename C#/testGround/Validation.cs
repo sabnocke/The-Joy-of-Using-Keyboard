@@ -1,5 +1,5 @@
-﻿using Arche;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
+using static System.Console;
 
 namespace testGround;
 
@@ -24,14 +24,14 @@ internal static class Validation
             { @"Heslo obsahuje dva stejné znaky za sebou.", CheckUnique(password) }
         };
 
-        Standard.Cout($"Heslo: {password}");
-        foreach ((var key, var value) in boolsName)
+        WriteLine($"Heslo: {password}");
+        foreach (var (key, value) in boolsName)
             if (!value)
             {
-                Standard.Cout($"*\t{key}");
+                WriteLine($"*\t{key}");
                 verified = false;
             }
 
-        return verified ? "*\tHeslo splňuje všechna kritéria." : "";
+        return verified ? "*\tPassword is correct." : "";
     }
 }
