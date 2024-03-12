@@ -1,6 +1,7 @@
 from __future__ import annotations
-from typing import Protocol, List
+
 from contextlib import suppress
+from typing import Protocol, List
 
 
 class Observer(Protocol):

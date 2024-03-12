@@ -1,9 +1,11 @@
-import cv2
 import time
-import numpy as np
-from grayscale import Matrix, Point
 from typing import Any
+
+import cv2
+import numpy as np
 from numba import njit
+
+from grayscale import Matrix, Point
 
 matrix = np.array([[0, 2], [3, 1]])
 

@@ -1,6 +1,6 @@
-from typing import Dict, List, Union, Type
 from math import atan, hypot, sin, cos
 from sys import float_info
+from typing import Dict, Union, Type
 
 Numeral = Union[int, float]
 

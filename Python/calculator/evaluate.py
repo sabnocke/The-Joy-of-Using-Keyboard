@@ -1,5 +1,5 @@
 import re
-import math
+
 
 def pop_newline(_list: list[str]) -> str | list[str]:
     # __list.reverse()

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Console;
+﻿
 
-namespace ConsoleApp1
+namespace ConsoleApp2
 {
     public static class ProteinTranslation
     {
@@ -30,14 +25,9 @@ namespace ConsoleApp1
             return new string[10];
         }
     }
-    
-    internal static class Program
+
+    public static void Main()
     {
-        private static void Main()
-        {
-            var lst = new string[3];
-            lst[0] = "";
-            WriteLine(lst.Any(i => i != null));
-        }
+        
     }
 }

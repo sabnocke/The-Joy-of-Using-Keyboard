@@ -1,6 +1,6 @@
 import cv2
-from numpy import ndarray
 import numpy as np
+from numpy import ndarray
 
 
 def process(image):

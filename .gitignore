@@ -606,3 +606,21 @@ azureCustomSpeech.py
 *.gz
 
 Python/.metals/
+
+Python/imageProcessing/poetry.lock
+
+Clojure/untitled/.cpcache/
+
+Clojure/.nrepl-port
+
+Clojure/.calva/
+
+C#/fine selection of sorts/bin/
+
+C#/fine selection of sorts/obj/
+
+*.sln
+
+*.mod
+
+*.json

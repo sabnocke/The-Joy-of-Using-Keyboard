@@ -7,13 +7,15 @@ root = customtkinter.CTk()
 
 root.geometry("500x500")
 
+
 def login():
     print("Test")
-    
+
+
 frame = customtkinter.CTkFrame(master=root)
 frame.pack(pady=20, padx=60, fill="both", expand=True)
 
-label = customtkinter.CTkLabel(frame, text="System Login",)
+label = customtkinter.CTkLabel(frame, text="System Login", )
 label.pack(pady=12, padx=10)
 
 entry1 = customtkinter.CTkEntry(frame, )

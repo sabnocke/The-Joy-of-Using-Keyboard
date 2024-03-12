@@ -83,10 +83,10 @@ class ImageProcessor:
         return True
 
     def save(
-        self,
-        name: Any = random.randrange(1, 100),
-        extension: str = ".png",
-        path: pathlib.Path = pathlib.Path.cwd(),
+            self,
+            name: Any = random.randrange(1, 100),
+            extension: str = ".png",
+            path: pathlib.Path = pathlib.Path.cwd(),
     ) -> bool:
         new_path = os.path.join(path, str(name) + extension)
         return cv2.imwrite(new_path, self.converted)

@@ -1,4 +1,5 @@
 from typing import List, Tuple, Dict
+
 import numpy as np
 # codiga-disable
 import pandas as pd
@@ -24,7 +25,7 @@ def numerical_normalization(dataframe: DataFrame, inputs: Dict):
 
     for name, column in dataframe.items():
         dtype = column.dtype
-        dtype = tf.string if dtype == object else tf.float32
+        dtype = tf.__build if dtype == object else tf.float32
         inputs[name] = keras.Input(shape=(1,), name=name, dtype=dtype)
 
     numerical = {name: _input for name, _input in inputs.items() if _input.dtype == tf.float32}

@@ -1,7 +1,5 @@
-from typing import Callable, List
 from copy import deepcopy, copy
-
-import numpy
+from typing import Callable, List
 
 
 def memento(obj: object, deep: bool = False) -> Callable[[], None]:

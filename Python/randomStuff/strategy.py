@@ -1,6 +1,7 @@
 from __future__ import annotations
-from typing import Callable
+
 from time import time
+from typing import Callable
 
 
 class DiscountStrategyValidator:

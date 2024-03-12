@@ -1,9 +1,10 @@
+import asyncio
 import html.parser
 import pathlib
 import time
-import asyncio
 import urllib.parse
 from typing import Iterable, Callable, Set
+
 import httpx as httpx
 
 
@@ -165,6 +166,7 @@ async def main():
     print(f"Crawled: {len(crawler.done)} URLs")
     print(f"Found: {len(seen)} URLs")
     print(f"Done in {end - start:.2f}s")
+
 
 if __name__ == "__main__":
     asyncio.run(main(), debug=True)

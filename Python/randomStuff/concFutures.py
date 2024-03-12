@@ -1,14 +1,14 @@
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
-from urllib.request import urlopen
 import math
 import time
-
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
+from urllib.request import urlopen
 
 URLS = ['http://www.foxnews.com/',
         'http://www.cnn.com/',
         'http://europe.wsj.com/',
         'http://www.bbc.co.uk/',
         'http://nonexistant-subdomain.python.org/']
+
 
 def runtime(func):
     def wrapper(*args, **kwargs):
@@ -17,7 +17,9 @@ def runtime(func):
         end = time.time()
         print(f'{func.__name__} ran in {end - start} seconds')
         return result
+
     return wrapper
+
 
 def load_url(url, timeout=None):
     # Retrieve a single page and report the URL and contents
@@ -25,7 +27,8 @@ def load_url(url, timeout=None):
         data = response.read()
         return data
 
-@runtime    
+
+@runtime
 def threading_test():
     # We can use a with statement to ensure threads are cleaned up promptly
     with ThreadPoolExecutor(max_workers=2) as executor:
@@ -39,6 +42,7 @@ def threading_test():
             else:
                 print('%r page is %d bytes' % (url, len(data)))
 
+
 PRIMES = [
     112272535095293,
     112582705942171,
@@ -47,6 +51,7 @@ PRIMES = [
     115797848077099,
     1099726899285419]
 
+
 def is_prime(num: int) -> bool:
     if num < 2:
         return False
@@ -54,7 +59,7 @@ def is_prime(num: int) -> bool:
         return True
     if num % 2 == 0:
         return False
-    
+
     sqrt_n: int = int(math.floor(math.sqrt(num))) + 1
     for i in range(3, sqrt_n, 2):
         if num % i == 0:
@@ -62,20 +67,22 @@ def is_prime(num: int) -> bool:
     return True
 
 
-
 @runtime
 def processing_test():
     with ProcessPoolExecutor() as pool:
         for number, prime in zip(PRIMES, pool.map(is_prime, PRIMES)):
             print(f'{number} is {prime}')
-            
+
+
 @runtime
 def loop_test():
     for item in PRIMES:
         print(f"{item} is {is_prime(item)}")
 
+
 def main():
     processing_test()
-            
+
+
 if __name__ == "__main__":
     main()

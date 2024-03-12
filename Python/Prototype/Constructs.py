@@ -1,6 +1,6 @@
 from functools import singledispatch
-from typing import Literal
 from io import StringIO
+from typing import Literal
 
 
 class StringBuilder:

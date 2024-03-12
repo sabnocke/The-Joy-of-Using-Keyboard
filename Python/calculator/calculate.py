@@ -1,6 +1,7 @@
+import math
 import tkinter
 import tkinter as tkt
-import math
+
 import evaluate as ev
 
 

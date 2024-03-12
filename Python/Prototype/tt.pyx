@@ -1,7 +1,8 @@
 from libc.stdlib cimport malloc, free
+
 def get_prime(int amount):
     cdef int N = amount + 1
-    cdef int *primes = <int*> malloc(N * sizeof(int))
+    cdef int *primes = <int *> malloc(N * sizeof(int))
     prime_values = []
     for i in range(N):
         primes[i] = True
@@ -16,5 +17,5 @@ def get_prime(int amount):
         if primes[n] != b'\x00':
             prime_values.append(n)
     # release memory once done
-    free(<void*>primes)
+    free(<void *> primes)
     return prime_values

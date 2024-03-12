@@ -1,7 +1,7 @@
 # import stuff
-import tensorflow as tf
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+import tensorflow as tf
 
 print(f"{tf.__version__=}")
 true: bool = True

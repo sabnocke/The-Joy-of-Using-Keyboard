@@ -38,7 +38,7 @@ module chars
     end function uppercase
 
    character(100) function response(s)
-      CHARACTER(100), INTENT(IN) :: s
+      CHARACTER(*), INTENT(IN) :: s
       print *, is_empty(s)
       if (uppercase(s) .and. is_question(s)) then
         response = "Calm down, I know what i'm doing!"
