@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "pdfmerge"
+version = "0.1.0"
+description = ""
+authors = ["Michal Hloch <hloch.michal@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pypdf2 = "^3.0.1"
+pymupdf = "^1.23.26"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -624,3 +624,7 @@ C#/fine selection of sorts/obj/
 *.mod
 
 *.json
+
+*.pdf
+
+*.otf
