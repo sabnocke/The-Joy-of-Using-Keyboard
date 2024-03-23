@@ -1,11 +1,15 @@
 import PyPDF2
 from PyPDF2 import Transformation
 import fitz
-from typing import Iterable
+from typing import Iterable, Generator, List
 from pprint import pprint
+from fontManager import load_yaml, write_yaml
 
 
-def overlay_pdf(path1: str, path2: str, output: str) -> None:
+def overlay_pdf(
+        path1: str,
+        path2: str,
+         output: str) -> None:
     pdf1 = PyPDF2.PdfReader(open(path1, "rb"))
     pdf2 = PyPDF2.PdfReader(open(path2, "rb"))
 
@@ -38,30 +42,48 @@ def change_color(_input: str, _output: str, color: Iterable[float] = (0, 0, 0)) 
     pdf1 = fitz.open(_input)
     pdf2 = fitz.open()
 
-    page = pdf1.load_page(1)
-    blocks = page.get_text("dict")["blocks"]
-    print(len(blocks))
-    for b in blocks:
-        print(len(b["lines"]))
-        print(len(b["lines"][0]["spans"]))
-        print(len(b["lines"][0]["spans"][0]))
-        # a, c = b["lines"][0]["spans"], b["lines"][1]["spans"]
-        # print(a[0]["text"])
-        # print(c[0]["text"])
-    b: dict = blocks[0]
+    # page = pdf1.load_page(1)
+    # count: int = 0
+    fonts: set = set()
+    container: List = []
+    for i in range(pdf1.page_count):
+        page = pdf1.load_page(i)
+        blocks = page.get_text("dict")["blocks"]
+        for block in blocks:
+            for line in block["lines"]:
+                for span in line["spans"]:
+                    container.append(span)
+                    fonts.add(span["font"])
+    pprint(fonts)
+    # pprint(len(container))
+    loaded = load_yaml("config.yml")
+    set_fonts = set(loaded["listFonts"])
 
-    font: str = b["lines"][0]["spans"][0]["font"]
-    text: str = b["lines"][0]["spans"][0]["text"]
-    span = b["lines"][0]["spans"][0]
-    count = len(b["lines"])
+    return
+    # blocks = page.get_text("dict")["blocks"]
+    # print(len(blocks))
+    # for b in blocks:
+    #     print(len(b["lines"]))
+    #     print(len(b["lines"][0]["spans"]))
+    #     print(len(b["lines"][0]["spans"][0]))
+    #     # a, c = b["lines"][0]["spans"], b["lines"][1]["spans"]
+    #     # print(a[0]["text"])
+    #     # print(c[0]["text"])
+    # b: dict = blocks[0]
 
-    # pprint(b["lines"])
-    # page.apply_redactions()
-    # pprint(span)
+    # font: str = b["lines"][0]["spans"][0]["font"]
+    # text: str = b["lines"][0]["spans"][0]["text"]
+    # span = b["lines"][0]["spans"][0]
+    # count = len(b["lines"])
+
     return
     ffont = fitz.Font(fontfile=r".\lmromancaps10-regular.otf")
     tw = fitz.TextWriter(page.rect, color=(1, 0.341, 0.200))
     tw.append(span["origin"], text=text, font=ffont, fontsize=span["size"])
+        # b["lines"][0]["spans"][0]["origin"]
+        # b["lines"][0]["spans"][0]["size"]
+        # b["lines"][0]["spans"][0]["font"]
+        # b["lines"][0]["spans"][0]["text"]
     tw.write_text(page)
     pdf1.ez_save("1.pdf")
 
@@ -83,5 +105,11 @@ def main() -> None:
     # overlay_pdf(path1, path2, output)
     change_color(path1, output, color=(255, 0, 0))
 
+
 if __name__ == "__main__":
     main()
+
+# TODO use Google Search API ( or its alternative ) to pass query for fonts found in document
+# TODO Download the fonts and update index
+# TODO Parse the document, using the downloaded fonts and predefined color
+# => Profit

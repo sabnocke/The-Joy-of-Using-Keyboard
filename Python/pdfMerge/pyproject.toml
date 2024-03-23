@@ -9,6 +9,9 @@ readme = "README.md"
 python = "^3.12"
 pypdf2 = "^3.0.1"
 pymupdf = "^1.23.26"
+aiohttp = "^3.9.3"
+aiofiles = "^23.2.1"
+pyyaml = "^6.0.1"
 
 
 [build-system]
