@@ -632,3 +632,5 @@ C#/fine selection of sorts/obj/
 Python/pdfMerge/config.yml
 
 Python/pdfMerge/fonts/
+
+*.zip
