@@ -12,6 +12,7 @@ pymupdf = "^1.23.26"
 aiohttp = "^3.9.3"
 aiofiles = "^23.2.1"
 pyyaml = "^6.0.1"
+beautifulsoup4 = "^4.12.3"
 
 
 [build-system]

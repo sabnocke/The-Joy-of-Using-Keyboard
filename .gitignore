@@ -630,3 +630,5 @@ C#/fine selection of sorts/obj/
 *.otf
 
 Python/pdfMerge/config.yml
+
+Python/pdfMerge/fonts/
