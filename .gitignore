@@ -634,3 +634,5 @@ Python/pdfMerge/config.yml
 Python/pdfMerge/fonts/
 
 *.zip
+
+fortran/makefile
