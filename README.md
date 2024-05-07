@@ -8,3 +8,6 @@
 * C++
 * C
 * Clojure
+* Julia
+* Lisp
+* Elixir
