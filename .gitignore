@@ -638,3 +638,7 @@ Python/pdfMerge/fonts/
 fortran/makefile
 
 fortran/f
+
+zig/exer/zig-cache/
+
+C_lang/cmake-build-debug/

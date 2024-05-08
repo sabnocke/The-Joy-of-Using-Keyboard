@@ -1,51 +1,30 @@
 const std = @import("std");
 const print = @import("std").debug.print;
 
-pub fn primes(buffer: []u32, comptime limit: u32) ![]u32 {
-    var isPrime: [limit + 1]bool = undefined;
-    for (0..limit+1) |i| {
-        isPrime[i] = true;
-    }
+pub fn primes(buffer: []u32, comptime limit: u32) []u32 {
+    var stat = std.StaticBitSet(limit + 1).initFull();
+    stat.unset(0);
+    stat.unset(1);
     var it: u32 = 4;
-    var count: u32 = 0;
-    while(it <= limit) {
-        isPrime[it] = false;
-        it += 2;
-        count += 1;
-    }
-    isPrime[0] = false;
-    isPrime[1] = false;
+    while (it < limit + 1) : (it += 2) stat.unset(it);
 
+    var x: u32 = 0;
     for (2..limit + 1) |i| {
-        if(isPrime[i]) {
-            var j = i * i;
-
-            while (j < limit + 1) {
-                isPrime[j] = false;
-                count += 1;
-                j = j << 1;
-            }
-        }
+        if (!stat.isSet(i)) continue;
+        var j = i + i;
+        while (j < limit + 1) : (j += i) stat.unset(j);
+        buffer[x] = @intCast(i);
+        x += 1;
     }
 
-    const length: u32 = limit + 1 - count;
-
-    var j: u32 = 0;
-    for (isPrime, 0..) |value, index| {
-        if(value) {
-            buffer[j] = @intCast(index);
-            j += 1;
-        }
-    }
-
-    return buffer[0..length];
+    return buffer[0..x];
 }
 
 pub fn primes2(buffer: []u32, limit: u32) []u32 {
     var j: u32 = 0;
-    for(0..limit + 1) |i| {
+    for (0..limit + 1) |i| {
         const ii: u32 = @intCast(i);
-        if(nIsPrime(ii)) {
+        if (nIsPrime(ii)) {
             buffer[j] = ii;
             j += 1;
         }
