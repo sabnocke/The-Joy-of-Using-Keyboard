@@ -644,3 +644,5 @@ zig/exer/zig-cache/
 C_lang/cmake-build-debug/
 
 C_lang/exercism/cmake-build-debug/
+
+C_lang/exer/cmake-build-debug/
