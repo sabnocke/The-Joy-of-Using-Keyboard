@@ -3,3 +3,11 @@
 * Python
 * JavaScript
 * Red
+* Fortran
+* Zig
+* C++
+* C
+* Clojure
+* Julia
+* Lisp
+* Elixir
