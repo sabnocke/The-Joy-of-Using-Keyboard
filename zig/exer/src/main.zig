@@ -5,15 +5,16 @@ const sieve = @import("sieve.zig");
 const print = @import("std").debug.print;
 const collatz = @import("collatz.zig");
 const bins = @import("binarySearch.zig");
+const scrabble = @import("scrabble.zig");
 
 pub fn main() !void {
-
+    print("\n", .{});
     // const response = try collatz.steps(1000000);
     // print("\nresponse = {}\n", .{response});
     // print("{}\n", .{'a' * 5});
-    const array = [_]i32{ 1, 3, 4, 6, 8, 9, 11 };
-    const find: usize = 6;
-    const response = bins.binarySearch(i32, find, &array);
+    // const array = [_]i32{ 1, 3, 4, 6, 8, 9, 11 };
+    // const find: usize = 6;
+    const response = scrabble.score("cabbage");
     print("\nresponse = {?}\n", .{response});
 }
 

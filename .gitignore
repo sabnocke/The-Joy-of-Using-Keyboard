@@ -646,3 +646,7 @@ C_lang/cmake-build-debug/
 C_lang/exercism/cmake-build-debug/
 
 C_lang/exer/cmake-build-debug/
+
+zig/exer/build.zig
+
+zig/exer/build.zig.zon
