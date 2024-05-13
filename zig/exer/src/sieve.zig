@@ -6,13 +6,13 @@ pub fn primes(buffer: []u32, comptime limit: u32) []u32 {
     stat.unset(0);
     stat.unset(1);
     var it: u32 = 4;
-    while (it < limit + 1) : (it += 2) stat.unset(it);
+    while (it < limit + 1) : (it += 2) {stat.unset(it);}
 
     var x: u32 = 0;
     for (2..limit + 1) |i| {
         if (!stat.isSet(i)) continue;
         var j = i + i;
-        while (j < limit + 1) : (j += i) stat.unset(j);
+        while (j < limit + 1) : (j += i) {stat.unset(j);}
         buffer[x] = @intCast(i);
         x += 1;
     }

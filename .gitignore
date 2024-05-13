@@ -650,3 +650,7 @@ C_lang/exer/cmake-build-debug/
 zig/exer/build.zig
 
 zig/exer/build.zig.zon
+
+cpp/exercism/cmake-build-debug/
+
+fortran/smt/cmake-build-debug/
