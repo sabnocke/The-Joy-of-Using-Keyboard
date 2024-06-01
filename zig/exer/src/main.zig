@@ -1,38 +1,33 @@
 const std = @import("std");
 const assert = @import("std").debug.assert;
-const leap = @import("leap.zig");
-const sieve = @import("sieve.zig");
 const print = @import("std").debug.print;
-const collatz = @import("collatz.zig");
-const bins = @import("binarySearch.zig");
-const scrabble = @import("scrabble.zig");
-const pangram = @import("pangram.zig");
-const armstrong = @import("armstrongNumbers.zig");
-const raindrops = @import("raindrops.zig");
-const grains = @import("grains.zig");
-const perfectNumbers = @import("perfectNumbers.zig");
-const triangle = @import("triangle.zig");
-const isogram = @import("isogram.zig");
-const testing = @import("std").testing;
-const dnd = @import("dnd_character.zig");
+const linkedList = @import("linkedList.zig");
 
 pub fn main() !void {
     print("\n", .{});
-    // var buffer: [15]u8 = undefined;
-    // const response = try collatz.steps(1000000);
-    // print("\nresponse = {}\n", .{response});
-    // print("{}\n", .{'a' * 5});
-    // const array = [_]i32{ 1, 3, 4, 6, 8, 9, 11 };
-    // const find: usize = 6;
-    const character = dnd.Character.init();
-    const response = dnd.isValid(character);
-    print("response = {}\n", .{response});
-    print("attrs:\n", .{});
-    print("{}\n", .{character.charisma});
-    print("{}\n", .{character.dexterity});
-    print("c = {}\n", .{character.constitution});
-    print("{}\n", .{character.intelligence});
-    print("{}\n", .{character.wisdom});
-    print("h = {}\n", .{character.hitpoints});
-    print("mod = {}", .{dnd.modifier(character.constitution)});
+
+    const List = linkedList.LinkedList(i32);
+    var list = List{};
+
+    var one = List.Node{ .data = 1 };
+    var two = List.Node{ .data = 2 };
+    var three = List.Node{ .data = 3 };
+    var four = List.Node{ .data = 4 };
+    var five = List.Node{ .data = 5 };
+
+    list.push(&one);
+    list.push(&two);
+    list.push(&three);
+    list.push(&four);
+    list.push(&five);
+
+    var t = list.first;
+    print("len = {}\n", .{list.len});
+    while (t) |node| : (t = node.next) {
+        print("value = {}\n", .{node.data});
+    }
+    list.unshift(&five);
+    t = list.first;
+    print("unshift value = {}\n", .{t.?.data});
+    print("len = {}\n", .{list.len});
 }
