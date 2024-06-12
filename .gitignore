@@ -656,3 +656,7 @@ cpp/exercism/cmake-build-debug/
 fortran/smt/cmake-build-debug/
 
 C\+\+/exercism/cmake-build-debug/
+
+*.fsproj
+
+*.wasm
