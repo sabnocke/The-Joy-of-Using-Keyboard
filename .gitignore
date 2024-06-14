@@ -660,3 +660,7 @@ C\+\+/exercism/cmake-build-debug/
 *.fsproj
 
 *.wasm
+
+Rust/exercism/src/
+Rust/exercism/Cargo.toml
+Rust/exercism/Cargo.lock

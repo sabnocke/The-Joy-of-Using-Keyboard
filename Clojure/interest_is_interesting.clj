@@ -1,7 +1,8 @@
 (ns interest-is-interesting)
 (clojure-version)
 
-(import (java.math BigDecimal))
+(import (java.math BigDecimal RoundingMode MathContext))
+(def mc (MathContext. 20 RoundingMode/HALF_UP))
 
 (defn interest-rate
   "Returns the interest rate based on the specified balance."
@@ -15,9 +16,17 @@
 (defn annual-balance-update
   "Returns the annual balance update, taking into account the interest rate."
   [balance]
-  (if (neg? balance)
-    (bigdec (- (* (abs balance) (+ 1 (/ (abs (interest-rate balance)) 100M)))))
-    (bigdec (* (abs balance) (+ 1 (/ (abs (interest-rate balance)) 100M))))))
+  (let [balance-bd (BigDecimal. (str (abs balance)))
+        interest-rate-bd (BigDecimal. (str (abs (interest-rate balance))))
+        interest-rate-div (-> interest-rate-bd
+                              (.divide (BigDecimal. "100") mc)
+                              (.add (BigDecimal. "1") mc)
+                              )
+        result (-> balance-bd
+                   (.multiply interest-rate-div mc)
+                   (.setScale 20 RoundingMode/HALF_UP))
+        ] result)
+  )
 
 (defn amount-to-donate
   "Returns how much money to donate based on the balance and the tax-free percentage."
