@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "iss"
+version = "0.1.0"
+description = "ISS shenanigans"
+authors = ["Michal Hloch <hloch.michal@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^2.1.2"
+matplotlib = "^3.9.2"
+icecream = "^2.1.3"
+bokeh = "^3.6.0"
+seaborn = "^0.13.2"
+soundfile = "^0.12.1"
+ipython = "^8.28.0"
+mpmath = "^1.3.0"
+sympy = "^1.13.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
