@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-pillow = "^10.2.0"
+pillow = "latest"
 opencv-python = "^4.9.0.80"
 numba = "^0.59.0"
 
